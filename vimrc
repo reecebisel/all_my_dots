@@ -60,3 +60,4 @@ nnoremap <leader>t :CtrlP<CR>
 nnoremap K <Plug>(expand_region_expand)
 nnoremap J <Plug>(expand_region_shrink)
 nnoremap / <C-o>:call NERDComment(0,"toggle")<C-m>
+nnoremap <leader>F :Ack!
