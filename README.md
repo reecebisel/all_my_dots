@@ -13,4 +13,4 @@ echo source ~/.bash_profile > ~/.bashrc
 ```
 
 Here is a quick view of what my bash profile looks like. 
-![bash profile view](http://imgur.com/a/L3b7C)
+![bash preview](bash_preview.png)
