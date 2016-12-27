@@ -1,8 +1,11 @@
+export GIT_EDITOR=vim
+
 # aliases
 alias co='checkout'
 alias ..='cd ..'
 alias be='bundle exec'
 alias ~='cd ~'
+alias colorslist="set | egrep 'COLOR_\w*'" # Lists all the colors, uses vars in .bashrc_non-interactive
 
 # setup some colors to use later in interactive shell or scripts
 export COLOR_NC='\[\e[0m\]' # No Color
@@ -22,11 +25,7 @@ export COLOR_BROWN='\[\e[0;33m\]'
 export COLOR_YELLOW='\[\e[1;33m\]'
 export COLOR_GRAY='\[\e[1;30m\]'
 export COLOR_LIGHT_GRAY='\[\e[0;37m\]'
-alias colorslist="set | egrep 'COLOR_\w*'" # Lists all the colors, uses vars in .bashrc_non-interactive
-"~/.bash_profile" 49L, 1599C
-export COLOR_GRAY='\[\e[1;30m\]'
-export COLOR_LIGHT_GRAY='\[\e[0;37m\]'
-alias colorslist="set | egrep 'COLOR_\w*'" # Lists all the colors, uses vars in .bashrc_non-interactive
+
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   c_git_clean='\[\e[1;32m\]'
   c_git_dirty='\[\e[1;31m\]'
@@ -35,6 +34,7 @@ else
   c_git_clean=
   c_git_dirty=
 fi
+
 # Function to assemble the Git parsingart of our prompt.
 git_prompt ()
 {
@@ -49,5 +49,6 @@ git_prompt ()
   fi
   echo "${COLOR_YELLOW}::${COLOR_WHITE}[$git_color$git_branch${COLOR_WHITE}]"
 }
+
 # Prompts ----------------------------------------------------------
 PROMPT_COMMAND='PS1="\n${COLOR_LIGHT_GRAY}\W$(git_prompt) >${COLOR_NC} "'
