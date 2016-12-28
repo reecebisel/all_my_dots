@@ -52,3 +52,5 @@ git_prompt ()
 
 # Prompts ----------------------------------------------------------
 PROMPT_COMMAND='PS1="\n${COLOR_LIGHT_GRAY}\W$(git_prompt) >${COLOR_NC} "'
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
