@@ -1,10 +1,10 @@
 export GIT_EDITOR=vim
 
 # aliases
-alias co='checkout'
+alias ~='cd ~'
 alias ..='cd ..'
 alias be='bundle exec'
-alias ~='cd ~'
+alias co='checkout'
 alias colorslist="set | egrep 'COLOR_\w*'" # Lists all the colors, uses vars in .bashrc_non-interactive
 
 # setup some colors to use later in interactive shell or scripts
