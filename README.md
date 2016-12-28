@@ -14,3 +14,6 @@ echo source ~/.bash_profile > ~/.bashrc
 
 Here is a quick view of what my bash profile looks like. 
 ![bash preview](bash_preview.png)
+
+Here is a quick view of the vim setup with my selected theme
+![vim preview](vim_preview.png)
