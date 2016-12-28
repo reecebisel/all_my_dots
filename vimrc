@@ -3,13 +3,14 @@ filetype off     " ditto holmes
 " Set the runtime path to include Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'         " has to be first
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'terryma/vim-expand-region'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'cdmedia/itg_flat_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'garbas/vim-snipmate'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -43,8 +44,8 @@ set nosmarttab
 set number        " line numbers
 set report=0      " tell me about news
 set nostartofline " don't jump to the start of the line
-"colorscheme 'stuff'
 syntax enable
+colorscheme itg_flat
 
 " Visual/Searching ~~~~~~~~~~~~~~~~~~~~~~~~~
 set ignorecase " don't worry letter case
