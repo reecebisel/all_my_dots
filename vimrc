@@ -1,27 +1,23 @@
 set nocompatible " required for vundle has to be before the vundle call
 filetype off     " ditto holmes
-" Set the runtime path to include Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'         " has to be first
 
-Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'cdmedia/itg_flat_vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'garbas/vim-snipmate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-cucumber'
-Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
-Plugin 'tomtom/tlib_vim'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
-filetype plugin indent on " required
 filetype plugin on        " required
 
 " Text Formatting ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,5 +51,7 @@ set showmatch  " shows match for brackets
 let mapleader="\<Space>"
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>o :CtrlP<CR>
-nnoremap K <Plug>(expand_region_expand)
-nnoremap J <Plug>(expand_region_shrink)
+noremap <leader>] >>
+noremap <leader>[ <<
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
