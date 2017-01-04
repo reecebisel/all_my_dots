@@ -1,6 +1,6 @@
 set nocompatible " required for vundle has to be before the vundle call
 filetype off     " ditto holmes
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
