@@ -16,6 +16,7 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
 Plugin 'mileszs/ack.vim'
+Plugin 'reecebisel/rainbow_hefe'
 
 call vundle#end()
 filetype plugin on        " required
@@ -41,7 +42,15 @@ set number        " line numbers
 set report=0      " tell me about news
 set nostartofline " don't jump to the start of the line
 syntax enable
-colorscheme itg_flat
+colorscheme rainbow_hefe
+
+nnoremap<C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunction
 
 " Visual/Searching ~~~~~~~~~~~~~~~~~~~~~~~~~
 set ignorecase " don't worry letter case
