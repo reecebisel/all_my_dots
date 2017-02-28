@@ -15,8 +15,11 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
 Plugin 'reecebisel/rainbow_hefe'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin on        " required
@@ -44,6 +47,14 @@ set nostartofline " don't jump to the start of the line
 syntax enable
 colorscheme rainbow_hefe
 
+" airline setup
+set laststatus=2  " have airline start automagically
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" function to help with vim theme styling
 nnoremap<C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
