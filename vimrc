@@ -73,5 +73,9 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>o :CtrlP<CR>
 noremap <leader>] >>
 noremap <leader>[ <<
-vmap v <Plug>(expand_region_expand)
+nnoremap <leader>s :w<Return>
+nnoremap <leader>F :Ack 
+nnoremap <leader>Q :q!<Return>
+" these need to be below the noremap functions so they aren't overridden. 
+vmap v <Plug>(expand_region_expand) 
 vmap <C-v> <Plug>(expand_region_shrink)
