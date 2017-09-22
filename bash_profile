@@ -5,7 +5,7 @@ alias ~='cd ~'
 alias ..='cd ..'
 alias be='bundle exec'
 alias colorslist="set | egrep 'COLOR_\w*'" # Lists all the colors, uses vars in .bashrc_non-interactive
-
+alias lollar='echo I LOVE LOLLAR SO MUCH; echo HE IS THE GREATEST HUMAN BEING TO EVER LIVE; echo AND EVERYTHING HE SAYS IS TRUE!!!;'
 # git aliases
 alias gs='git status'
 alias gc='git commit'
