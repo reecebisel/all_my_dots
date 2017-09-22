@@ -2,16 +2,12 @@ To use this just run:
 ```
 git clone git@gitlab.com:reecebisel/all_my_dots.git 
 ```
-Then create symlinks for your `bash_profile` && `vimrc` using:
+Then install Vundle using:
 ```
-ln -s path/to/all_my_dots/vimrc ~/.vimrc
-ln -s path/to/all_my_dots/bash_profile ~/.bash_profile
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-Also create symlinks for the `~/.vim/bundle` && `~/.vim/colors` as this can sometime cause issues with vundle.
-```
-ln -s path/to/all_my_dots/vim/bundle ~/.vim/bundle
-ln -s path/to/all_my_dots/vim/colors ~/.vim/colors
-```
+Then you can open vim and run `:PluginInstall`
+
 Finally run: 
 ```
 echo source ~/.bash_profile > ~/.bashrc
