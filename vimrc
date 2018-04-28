@@ -1,30 +1,29 @@
 set nocompatible " required for vundle has to be before the vundle call
 filetype off     " ditto holmes
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'terryma/vim-expand-region'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-fugitive'
-Plugin 'mileszs/ack.vim'
+Plugin 'isaacsloan/vim-slang'
 Plugin 'reecebisel/rainbow_hefe'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'mxw/vim-jsx'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'slim-template/vim-slim'
 Plugin 'rhysd/vim-crystal'
+Plugin 'rking/ag.vim'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin on        " required
@@ -39,11 +38,6 @@ set noswapfile    " I hate swap files
 set autoindent    " auto indent that stuff
 set smartindent   " don't be dumb
 set nowrap        " no line wraps 
-set softtabstop=2 " 2 space tabs
-set shiftwidth=2
-set tabstop=4
-set expandtab
-set nosmarttab
 
 " UI stuff ~~~~~~~~~~~~~~~~~~~~~~~~~
 set number        " line numbers
@@ -52,12 +46,28 @@ set nostartofline " don't jump to the start of the line
 syntax enable
 colorscheme rainbow_hefe
 
+" Cursor stuff ~~~~~~~~~~~~~~~~~~~~~~~
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Indent stuff ~~~~~~~~~~~~~~~~~~~~~~~
+set softtabstop=2 " 2 space tabs
+set shiftwidth=2
+set tabstop=4
+set expandtab
+set nosmarttab
+
+" system clipboards ~~~~~~~~~~~~~~~~~~
+map <Leader>y "+y
+map <Leader>d "+d
+map <Leader>p "+p
+map <Leader>P "+P
+
 " airline setup
 set laststatus=2  " have airline start automagically
 let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
+
 
 " function to help with vim theme styling
 nnoremap<C-S-P> :call <SID>SynStack()<CR>
@@ -74,13 +84,13 @@ set showmatch  " shows match for brackets
 
 " Key Maps  ~~~~~~~~~~~~~~~~~~~~~~~~~
 let mapleader="\<Space>"
-nnoremap <leader>n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>o :CtrlP<CR>
-noremap <leader>] >>
-noremap <leader>[ <<
-nnoremap <leader>s :w<Return>
-nnoremap <leader>F :Ack 
-nnoremap <leader>Q :q!<Return>
-" these need to be below the noremap functions so they aren't overridden. 
-vmap v <Plug>(expand_region_expand) 
-vmap <C-v> <Plug>(expand_region_shrink)
+nnoremap <leader>s :w<CR>
+nnoremap <leader>F :Ag 
+nnoremap <leader>Q :q!<CR>
+noremap <leader>CC gcc
+noremap <leader>cc gc
+vnoremap > ><CR>gv 
+vnoremap < <<CR>gv
+
