@@ -56,5 +56,12 @@ git_prompt ()
 
 # Prompts ----------------------------------------------------------
 PROMPT_COMMAND='PS1="\n${COLOR_LIGHT_GRAY}\W$(git_prompt) >${COLOR_NC} "'
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+f
