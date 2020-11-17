@@ -65,3 +65,6 @@ fi
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
+# source job specific stuff via the bashrc file
+[[ -s ~/.bashrc ]] && source ~/.bashrc
