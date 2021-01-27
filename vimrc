@@ -37,7 +37,7 @@ endif
 set noswapfile    " I hate swap files
 set autoindent    " auto indent that stuff
 set smartindent   " don't be dumb
-set nowrap        " no line wraps 
+set nowrap        " no line wraps
 
 " UI stuff ~~~~~~~~~~~~~~~~~~~~~~~~~
 set number        " line numbers
@@ -68,6 +68,17 @@ map <Leader>P "+P
 set laststatus=2  " have airline start automagically
 let g:airline_powerline_fonts = 1
 
+" CTRL-P options ~~~~~~~~~~~~~~~~~~~~~
+let g:ctrlp_max_files=1000000
+let g:ctrlp_max_depth=50
+let g:ctrlp_match_window = 'min:4,max:15'
+"let g:ctrlp_working_path_mode='ra'
+"let g:ctrlp_working_path_mode=''
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 
 " function to help with vim theme styling
 nnoremap<C-S-P> :call <SID>SynStack()<CR>
@@ -87,10 +98,10 @@ let mapleader="\<Space>"
 map <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>o :CtrlP<CR>
 nnoremap <leader>s :w<CR>
-nnoremap <leader>F :Ag 
+nnoremap <leader>F :Ag
 nnoremap <leader>Q :q!<CR>
 noremap <leader>CC gcc
 noremap <leader>cc gc
-vnoremap > ><CR>gv 
+vnoremap > ><CR>gv
 vnoremap < <<CR>gv
 
