@@ -23,6 +23,7 @@ Plugin 'rking/ag.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'axelf4/vim-strip-trailing-whitespace'
 
 call vundle#end()
 filetype plugin on        " required
